@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-VB8B-ETL-DEV07"
+		},
+		"LS_AZSQLDB_METADATA_password": {
+			"value": ""
+		},
+		"LS_AZSQLDB_METADATA1_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "@{linkedService().storage_account_loc}"
+		},
+		"LS_ADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
+			"value": "@{linkedService().storage_account_loc}"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-db-vb-dev01.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev "
+		},
+		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
+			"value": "admin123"
+		},
+		"LS_AZSQLDB_METADATA1_properties_typeProperties_server": {
+			"value": "sql-db-vb-dev01.database.windows.net"
+		},
+		"LS_AZSQLDB_METADATA1_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZSQLDB_METADATA1_properties_typeProperties_userName": {
+			"value": "admin123"
+		}
+	}
+}
