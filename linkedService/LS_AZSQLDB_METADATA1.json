@@ -1,0 +1,17 @@
+{
+	"name": "LS_AZSQLDB_METADATA1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sql-db-vb-dev01.database.windows.net",
+			"database": "sql-db-vb-dev",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "admin123",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEJFOUUxMkQxLTVBMTUtNEJDQS04MkFFLTZGMjU0MzQ0QUZERl8yMDZhYWQ2MC04ZDQyLTQ3Y2UtYjYxNy00Y2Q5ZmYxN2JiYTciDQp9"
+		}
+	}
+}
