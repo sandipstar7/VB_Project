@@ -122,19 +122,12 @@
 							"value": "json",
 							"activities": [
 								{
-									"name": "EXEC_JSON_FLAT",
-									"type": "ExecutePipeline",
+									"name": "Wait3",
+									"type": "Wait",
 									"dependsOn": [],
-									"policy": {
-										"secureInput": false
-									},
 									"userProperties": [],
 									"typeProperties": {
-										"pipeline": {
-											"referenceName": "PL3_CLOUDSG_CSV_EXCEL",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true
+										"waitTimeInSeconds": 1
 									}
 								}
 							]
