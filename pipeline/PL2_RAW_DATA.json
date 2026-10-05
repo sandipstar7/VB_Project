@@ -1,6 +1,16 @@
 {
 	"name": "PL2_RAW_DATA",
 	"properties": {
+		"parameters": {
+			"Trigger": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Trigger": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
