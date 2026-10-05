@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "@{linkedService().storage_account_loc}"
 		},
+		"LS_AZADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().storage_account_loc}"
+		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sql-db-vb-dev01.database.windows.net"
@@ -85,6 +89,9 @@
 					},
 					"LS_ADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url')]"
+					},
+					"LS_AZADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_AZADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url')]"
 					},
 					"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 						"value": "[parameters('LS_AZSQLDB_METADATA_properties_typeProperties_server')]"

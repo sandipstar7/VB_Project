@@ -17,6 +17,9 @@
 		"LS_ADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
 		},
+		"LS_AZADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
+			"value": "@{linkedService().storage_account_loc}"
+		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"value": "sql-db-vb-dev01.database.windows.net"
 		},
