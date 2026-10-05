@@ -2,11 +2,6 @@
 	"name": "LS_AZSQLDB_METADATA",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
-		"parameters": {
-			"storage_account_loc": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
@@ -16,7 +11,7 @@
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "admin123",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEJFOUUxMkQxLTVBMTUtNEJDQS04MkFFLTZGMjU0MzQ0QUZERl8wMDYzYTk2Yy1iYzJmLTRjOTAtYTM5OC0xNzIzOTc4ZTkzODkiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEJFOUUxMkQxLTVBMTUtNEJDQS04MkFFLTZGMjU0MzQ0QUZERl9hODZlNWU5MC0zMTU3LTQ2ZDUtODkzYS02ZjEwOTFiZDFhMTYiDQp9"
 		}
 	}
 }
