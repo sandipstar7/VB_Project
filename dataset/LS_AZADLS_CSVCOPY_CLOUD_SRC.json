@@ -3,7 +3,12 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_AZADLS_VB_CLOUD_RAW",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
+				"col_delimiter": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter",
+				"filename": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile"
+			}
 		},
 		"annotations": [],
 		"type": "Json",
