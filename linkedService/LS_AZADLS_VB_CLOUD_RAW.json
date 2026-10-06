@@ -12,7 +12,7 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://adlsdevvbsrc07.dfs.core.windows.net/"
+			"url": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
 		}
 	}
 }
