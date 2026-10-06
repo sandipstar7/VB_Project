@@ -20,17 +20,23 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
 		},
+		"DS_AZADLS_PRQT_CLOUD_CSV_SINK_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
+		},
 		"LS_ADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
 		},
 		"LS_AZADLS_VB_CLOUD_CSV_SINK_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
 		},
+		"LS_AZADLS_VB_CLOUD_RAW_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
+		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"value": "sql-db-vb-dev01.database.windows.net"
 		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_database": {
-			"value": "sql-db-vb-dev "
+			"value": "sql-db-vb-dev"
 		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_userName": {
 			"value": "admin123"
