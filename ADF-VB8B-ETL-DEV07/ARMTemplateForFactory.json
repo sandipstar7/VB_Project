@@ -842,9 +842,13 @@
 								}
 							},
 							"sink": {
-								"type": "AzureSqlSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false
+								"type": "ParquetSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "ParquetWriteSettings"
+								}
 							},
 							"enableStaging": false,
 							"translator": {
@@ -878,9 +882,18 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "DS_AZSQLDB_METADATA",
+								"referenceName": "Parquet",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"storage_account_loc": {
+										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdata",
+										"type": "Expression"
+									},
+									"directory": {
+										"value": "@concat(\n    activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory, '/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd'), '/'\n)",
+										"type": "Expression"
+									}
+								}
 							}
 						]
 					},
@@ -953,7 +966,8 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_METADATA')]",
 				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_METADATA')]",
-				"[concat(variables('factoryId'), '/datasets/LS_AZADLS_VB_CLOUD_RAW')]"
+				"[concat(variables('factoryId'), '/datasets/LS_AZADLS_VB_CLOUD_RAW')]",
+				"[concat(variables('factoryId'), '/datasets/Parquet')]"
 			]
 		},
 		{
