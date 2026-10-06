@@ -39,7 +39,10 @@
 					"type": "Expression"
 				}
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": {
+				"value": "@dataset().col_delimiter",
+				"type": "Expression"
+			},
 			"compressionCodec": "snappy",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
