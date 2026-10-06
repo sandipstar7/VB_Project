@@ -2,11 +2,15 @@
 	"name": "Parquet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_ADLS_VB_CLOUD_CSV_SINK",
+			"referenceName": "LS_AZADLS_VB_CLOUD_RAW",
 			"type": "LinkedServiceReference",
 			"parameters": {
 				"storage_account_loc": {
 					"value": "@dataset().storage_account_loc",
+					"type": "Expression"
+				},
+				"directory": {
+					"value": "@dataset().directory",
 					"type": "Expression"
 				}
 			}
@@ -17,6 +21,12 @@
 			},
 			"directory": {
 				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			},
+			"column_delimiter": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -24,10 +34,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "@dataset().directory",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
 				"fileSystem": "output"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": null
 		},
 		"schema": []
 	}
