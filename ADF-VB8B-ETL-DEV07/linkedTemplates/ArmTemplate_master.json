@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_METADATA1'"
 		},
+		"LS_JSON_AzureDataLakeStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_JSON_AzureDataLakeStorage'"
+		},
+		"LS_JSON_AzureDatalakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_AzureDatalakeStorage1'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().storage_account_loc}"
@@ -51,6 +59,14 @@
 			"type": "string",
 			"defaultValue": "admin123"
 		},
+		"LS_JSON_AzureDatalakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevvbsrc07.dfs.core.windows.net/"
+		},
+		"LS_JSON_AzurelakeStorage001_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -84,6 +100,12 @@
 					"LS_AZSQLDB_METADATA1_password": {
 						"value": "[parameters('LS_AZSQLDB_METADATA1_password')]"
 					},
+					"LS_JSON_AzureDataLakeStorage_connectionString": {
+						"value": "[parameters('LS_JSON_AzureDataLakeStorage_connectionString')]"
+					},
+					"LS_JSON_AzureDatalakeStorage1_accountKey": {
+						"value": "[parameters('LS_JSON_AzureDatalakeStorage1_accountKey')]"
+					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
@@ -110,10 +132,36 @@
 					},
 					"LS_AZSQLDB_METADATA1_properties_typeProperties_userName": {
 						"value": "[parameters('LS_AZSQLDB_METADATA1_properties_typeProperties_userName')]"
+					},
+					"LS_JSON_AzureDatalakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_AzureDatalakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_JSON_AzurelakeStorage001_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_AzurelakeStorage001_properties_typeProperties_url')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "ADF-VB8B-ETL-DEV07_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-VB8B-ETL-DEV07_ArmTemplate_0')]"
+			]
 		}
 	]
 }

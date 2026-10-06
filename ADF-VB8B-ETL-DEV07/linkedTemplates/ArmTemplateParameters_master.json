@@ -11,6 +11,12 @@
 		"LS_AZSQLDB_METADATA1_password": {
 			"value": ""
 		},
+		"LS_JSON_AzureDataLakeStorage_connectionString": {
+			"value": ""
+		},
+		"LS_JSON_AzureDatalakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
 		},
@@ -37,6 +43,12 @@
 		},
 		"LS_AZSQLDB_METADATA1_properties_typeProperties_userName": {
 			"value": "admin123"
+		},
+		"LS_JSON_AzureDatalakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsrc07.dfs.core.windows.net/"
+		},
+		"LS_JSON_AzurelakeStorage001_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""
