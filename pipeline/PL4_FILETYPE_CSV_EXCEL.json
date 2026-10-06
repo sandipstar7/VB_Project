@@ -118,7 +118,13 @@
 											"referenceName": "PL_JSON",
 											"type": "PipelineReference"
 										},
-										"waitOnCompletion": true
+										"waitOnCompletion": true,
+										"parameters": {
+											"Trigger": {
+												"value": "@pipeline().parameters.trigger",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]
