@@ -17,7 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderStoredProcedureName": "[dbo].[vb_get_job_dtls]",
 						"storedProcedureParameters": {
 							"TriggerName": {
 								"type": "String",
@@ -149,21 +148,7 @@
 				"inputs": [
 					{
 						"referenceName": "DS_AZSQLDB_METADATA",
-						"type": "DatasetReference",
-						"parameters": {
-							"storage_account_loc": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
-								"type": "Expression"
-							},
-							"col_delimiter": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimter",
-								"type": "Expression"
-							},
-							"filename": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.SourceFile",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
