@@ -108,9 +108,13 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
@@ -144,8 +148,18 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_AZSQLDB_METADATA",
-						"type": "DatasetReference"
+						"referenceName": "Parquet",
+						"type": "DatasetReference",
+						"parameters": {
+							"storage_account_loc": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdata",
+								"type": "Expression"
+							},
+							"directory": {
+								"value": "@concat(\n    activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory, '/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd'), '/'\n)",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
