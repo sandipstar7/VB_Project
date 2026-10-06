@@ -145,7 +145,21 @@
 				"inputs": [
 					{
 						"referenceName": "DS_AZADLS_CSVCOPY_CLOUD_SRC",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"storage_account_loc": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
+								"type": "Expression"
+							},
+							"col_delimiter": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimter",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
