@@ -124,30 +124,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderStoredProcedureName": "[dbo].[vb_get_job_dtls]",
-						"storedProcedureParameters": {
-							"storage_account_loc": {
-								"type": "String",
-								"value": {
-									"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
-									"type": "Expression"
-								}
-							},
-							"Column Delimiter": {
-								"type": "String",
-								"value": {
-									"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter",
-									"type": "Expression"
-								}
-							},
-							"Filename": {
-								"type": "String",
-								"value": {
-									"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
-									"type": "Expression"
-								}
-							}
-						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -169,7 +145,21 @@
 				"inputs": [
 					{
 						"referenceName": "DS_AZSQLDB_METADATA",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"storage_account_loc": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
+								"type": "Expression"
+							},
+							"col_delimiter": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimter",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.SourceFile",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
