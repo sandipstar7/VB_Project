@@ -1,0 +1,21 @@
+{
+	"name": "DS_AZADLS_CSVCOPY_CLOUD_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZADLS_VB_CLOUD_RAW",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

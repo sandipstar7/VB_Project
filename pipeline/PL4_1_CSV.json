@@ -113,14 +113,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "JsonSource",
+						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "JsonReadSettings"
+							"type": "DelimitedTextReadSettings"
 						}
 					},
 					"sink": {
@@ -132,18 +132,20 @@
 							"type": "ParquetWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "LS_AZADLS_CSVCOPY_CLOUD_SRC",
-						"type": "DatasetReference",
-						"parameters": {
-							"storage_account_loc": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
-								"type": "Expression"
-							}
-						}
+						"referenceName": "DS_AZADLS_CSVCOPY_CLOUD_SRC",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
