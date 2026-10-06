@@ -5,6 +5,17 @@
 			"referenceName": "LS_AZSQLDB_METADATA",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"storage_account_loc": {
+				"type": "string"
+			},
+			"col_delimiter": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
@@ -53,7 +64,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "vb_tbl_job_dtls"
+			"table": ""
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
