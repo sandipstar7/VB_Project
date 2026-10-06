@@ -24,6 +24,9 @@
 			},
 			"filename": {
 				"type": "string"
+			},
+			"directory": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
