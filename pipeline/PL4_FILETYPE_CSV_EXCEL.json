@@ -101,6 +101,27 @@
 									}
 								}
 							]
+						},
+						{
+							"value": "json",
+							"activities": [
+								{
+									"name": "EXE_PL3_JSON",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "PL_JSON",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true
+									}
+								}
+							]
 						}
 					]
 				}
