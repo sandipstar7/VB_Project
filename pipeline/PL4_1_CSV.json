@@ -113,9 +113,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
 					},
 					"sink": {
 						"type": "ParquetSink",
@@ -138,8 +141,22 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_AZSQLDB_METADATA",
-						"type": "DatasetReference"
+						"referenceName": "LS_AZADLS_VB_CLOUD_RAW",
+						"type": "DatasetReference",
+						"parameters": {
+							"storage_account_loc": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata\n",
+								"type": "Expression"
+							},
+							"sheet_name": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter\n",
+								"type": "Expression"
+							},
+							"filename": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile\n",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
