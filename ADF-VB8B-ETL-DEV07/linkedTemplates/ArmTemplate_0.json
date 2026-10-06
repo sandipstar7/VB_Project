@@ -1048,6 +1048,11 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"parameters": {
+					"Trigger": {
+						"type": "string"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -1161,6 +1166,33 @@
 											}
 										}
 									]
+								},
+								{
+									"value": "json",
+									"activities": [
+										{
+											"name": "EXE_PL3_JSON",
+											"type": "ExecutePipeline",
+											"dependsOn": [],
+											"policy": {
+												"secureInput": false
+											},
+											"userProperties": [],
+											"typeProperties": {
+												"pipeline": {
+													"referenceName": "PL_JSON",
+													"type": "PipelineReference"
+												},
+												"waitOnCompletion": true,
+												"parameters": {
+													"Trigger": {
+														"value": "@pipeline().parameters.trigger",
+														"type": "Expression"
+													}
+												}
+											}
+										}
+									]
 								}
 							]
 						}
@@ -1180,7 +1212,8 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_METADATA')]",
 				"[concat(variables('factoryId'), '/pipelines/PL4_1_CSV')]",
-				"[concat(variables('factoryId'), '/pipelines/PL4_2_EXCEL')]"
+				"[concat(variables('factoryId'), '/pipelines/PL4_2_EXCEL')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_JSON')]"
 			]
 		},
 		{
