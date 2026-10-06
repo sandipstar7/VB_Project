@@ -4,9 +4,6 @@
 		"parameters": {
 			"storage_account_loc": {
 				"type": "string"
-			},
-			"filename": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
