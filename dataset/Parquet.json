@@ -24,9 +24,6 @@
 			},
 			"filename": {
 				"type": "string"
-			},
-			"column_delimiter": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
