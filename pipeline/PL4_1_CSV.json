@@ -184,14 +184,6 @@
 							"directory": {
 								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory",
 								"type": "Expression"
-							},
-							"filename": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.filename",
-								"type": "Expression"
-							},
-							"column_delimiter": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimter",
-								"type": "Expression"
 							}
 						}
 					}
