@@ -8,12 +8,22 @@
 				"storage_account_loc": {
 					"value": "@dataset().storage_account_loc",
 					"type": "Expression"
+				},
+				"directory": {
+					"value": "@dataset().directory",
+					"type": "Expression"
 				}
 			}
 		},
 		"parameters": {
 			"storage_account_loc": {
 				"type": "String"
+			},
+			"directory": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -22,7 +32,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().directory",
+					"value": "@dataset().filename",
 					"type": "Expression"
 				},
 				"folderPath": "csv",
