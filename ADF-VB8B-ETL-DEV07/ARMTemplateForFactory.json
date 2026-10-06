@@ -273,12 +273,25 @@
 									"value": "json",
 									"activities": [
 										{
-											"name": "Wait3",
-											"type": "Wait",
+											"name": "Execute Pipeline1",
+											"type": "ExecutePipeline",
 											"dependsOn": [],
+											"policy": {
+												"secureInput": false
+											},
 											"userProperties": [],
 											"typeProperties": {
-												"waitTimeInSeconds": 1
+												"pipeline": {
+													"referenceName": "PL_JSON",
+													"type": "PipelineReference"
+												},
+												"waitOnCompletion": true,
+												"parameters": {
+													"Trigger": {
+														"value": "@pipeline().parameters.Trigger",
+														"type": "Expression"
+													}
+												}
 											}
 										}
 									]
@@ -304,7 +317,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_METADATA')]",
-				"[concat(variables('factoryId'), '/pipelines/PL3_CLOUDSG_CSV_EXCEL')]"
+				"[concat(variables('factoryId'), '/pipelines/PL3_CLOUDSG_CSV_EXCEL')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_JSON')]"
 			]
 		},
 		{
@@ -1092,33 +1106,6 @@
 											}
 										}
 									]
-								},
-								{
-									"value": "json",
-									"activities": [
-										{
-											"name": "EXE_PL3_JSON",
-											"type": "ExecutePipeline",
-											"dependsOn": [],
-											"policy": {
-												"secureInput": false
-											},
-											"userProperties": [],
-											"typeProperties": {
-												"pipeline": {
-													"referenceName": "PL_JSON",
-													"type": "PipelineReference"
-												},
-												"waitOnCompletion": true,
-												"parameters": {
-													"Trigger": {
-														"value": "@pipeline().parameters.trigger",
-														"type": "Expression"
-													}
-												}
-											}
-										}
-									]
 								}
 							]
 						}
@@ -1138,8 +1125,7 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_METADATA')]",
 				"[concat(variables('factoryId'), '/pipelines/PL4_1_CSV')]",
-				"[concat(variables('factoryId'), '/pipelines/PL4_2_EXCEL')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_JSON')]"
+				"[concat(variables('factoryId'), '/pipelines/PL4_2_EXCEL')]"
 			]
 		},
 		{
