@@ -43,7 +43,7 @@
 				"value": "@dataset().col_delimiter",
 				"type": "Expression"
 			},
-			"compressionCodec": "snappy",
+			"compressionCodec": null,
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
