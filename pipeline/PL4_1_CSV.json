@@ -168,6 +168,10 @@
 							"filename": {
 								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
 								"type": "Expression"
+							},
+							"directory": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.directory",
+								"type": "Expression"
 							}
 						}
 					}
