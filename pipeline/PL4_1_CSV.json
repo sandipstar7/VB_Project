@@ -113,11 +113,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "ExcelSource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
@@ -129,31 +132,19 @@
 							"type": "ParquetWriteSettings"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
+					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "LS_AZADLS_VB_CLOUD_RAW",
+						"referenceName": "LS_AZADLS_CSVCOPY_CLOUD_SRC",
 						"type": "DatasetReference",
 						"parameters": {
 							"storage_account_loc": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata\n",
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcedata",
 								"type": "Expression"
 							},
-							"sheet_name": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.delimiter\n",
-								"type": "Expression"
-							},
-							"filename": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile\n",
+							"File_name": {
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
 								"type": "Expression"
 							}
 						}
