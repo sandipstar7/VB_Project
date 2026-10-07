@@ -64,7 +64,13 @@
 											"referenceName": "PL3_CLOUDSG_CSV_EXCEL",
 											"type": "PipelineReference"
 										},
-										"waitOnCompletion": true
+										"waitOnCompletion": true,
+										"parameters": {
+											"trigger": {
+												"value": "@pipeline().parameters.trigger",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]
