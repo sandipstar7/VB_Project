@@ -640,10 +640,6 @@
 									"filename": {
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
 										"type": "Expression"
-									},
-									"directory": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.directory",
-										"type": "Expression"
 									}
 								}
 							}
@@ -1270,10 +1266,6 @@
 						"storage_account_loc": {
 							"value": "@dataset().storage_account_loc",
 							"type": "Expression"
-						},
-						"directory": {
-							"value": "@dataset().directory",
-							"type": "Expression"
 						}
 					}
 				},
@@ -1285,9 +1277,6 @@
 						"type": "string"
 					},
 					"filename": {
-						"type": "string"
-					},
-					"directory": {
 						"type": "string"
 					}
 				},
@@ -1416,10 +1405,6 @@
 					"parameters": {
 						"storage_account_loc": {
 							"value": "@dataset().storage_account_loc",
-							"type": "Expression"
-						},
-						"directory": {
-							"value": "@dataset().directory",
 							"type": "Expression"
 						}
 					}
@@ -1566,9 +1551,6 @@
 			"properties": {
 				"parameters": {
 					"storage_account_loc": {
-						"type": "string"
-					},
-					"directory": {
 						"type": "string"
 					}
 				},
