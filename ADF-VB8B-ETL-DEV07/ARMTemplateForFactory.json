@@ -98,7 +98,7 @@
 						"typeProperties": {
 							"variableName": "Trigger_variable",
 							"value": {
-								"value": "@if(equals(pipeline().parameters.trigger, null),pipeline().triggerName,pipeline().parameters.trigger)\t\n",
+								"value": "@if(equals(pipeline().parameters.trigger, null),pipeline().TriggerName,pipeline().parameters.trigger)\t\n",
 								"type": "Expression"
 							}
 						}
@@ -124,12 +124,7 @@
 								"type": "PipelineReference"
 							},
 							"waitOnCompletion": true,
-							"parameters": {
-								"Trigger": {
-									"value": "@pipeline().parameters.Trigger",
-									"type": "Expression"
-								}
-							}
+							"parameters": {}
 						}
 					}
 				],
@@ -296,7 +291,7 @@
 												"waitOnCompletion": true,
 												"parameters": {
 													"Trigger": {
-														"value": "@pipeline().parameters.Trigger",
+														"value": "@pipeline().parameters.trigger",
 														"type": "Expression"
 													}
 												}
@@ -312,7 +307,7 @@
 					"elapsedTimeMetric": {}
 				},
 				"parameters": {
-					"Trigger": {
+					"trigger": {
 						"type": "string"
 					}
 				},
