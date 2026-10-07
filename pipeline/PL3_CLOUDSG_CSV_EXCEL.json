@@ -44,7 +44,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"on": {
-						"value": "@ activity('LKUP_SRC_FILES'activity('LKP_SRC_FILES').output",
+						"value": "@activity('LKP_SRC_FILES').output.firstRow.L3_switch_type",
 						"type": "Expression"
 					},
 					"cases": [
