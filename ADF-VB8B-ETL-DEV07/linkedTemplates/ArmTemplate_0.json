@@ -392,10 +392,7 @@
 						"scale": 3
 					}
 				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "vb_tbl_job_dtls"
-				}
+				"typeProperties": {}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_METADATA')]"
