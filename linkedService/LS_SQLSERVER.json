@@ -1,0 +1,21 @@
+{
+	"name": "LS_SQLSERVER",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-OOAPFA3\\SQLExpress",
+			"database": "vbproject",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sandipazure",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkMjM1NTQ5My05YjcwLTQ1NzItOTM3My0yZGQ3ZThmNDVmY2EiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Self-hostingruntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
