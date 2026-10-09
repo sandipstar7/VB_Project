@@ -1080,7 +1080,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"on": {
-								"value": "(@ activity('LKUP_GET_FILETYPE_CSV_EXCEL').output.firstRow.L4_switch_type)",
+								"value": "@activity('LKUP_GET_FILETYPE_CSV_EXCEL').output.firstRow.L4_switch_type",
 								"type": "Expression"
 							},
 							"cases": [
