@@ -388,7 +388,7 @@
 							},
 							"cases": [
 								{
-									"value": "AZURE",
+									"value": "azure",
 									"activities": [
 										{
 											"name": "Exec_file_CSV",
