@@ -49,7 +49,7 @@
 					},
 					"cases": [
 						{
-							"value": "CloudStorage",
+							"value": "csv",
 							"activities": [
 								{
 									"name": "EXEC_PL3_DATA",
@@ -90,7 +90,7 @@
 							]
 						},
 						{
-							"value": "sftp",
+							"value": "excel",
 							"activities": [
 								{
 									"name": "Wait2",
