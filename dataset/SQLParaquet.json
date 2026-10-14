@@ -1,0 +1,18 @@
+{
+	"name": "SQLParaquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_SQL_ON PREM",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
