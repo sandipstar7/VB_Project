@@ -9,7 +9,11 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n    'sqltable/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
