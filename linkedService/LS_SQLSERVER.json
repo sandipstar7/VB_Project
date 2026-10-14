@@ -8,10 +8,10 @@
 			"server": "localhost",
 			"database": "vbproject",
 			"encrypt": "mandatory",
-			"trustServerCertificate": false,
+			"trustServerCertificate": true,
 			"authenticationType": "SQL",
 			"userName": "sandip",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0Y2NmOThkOS1kNWNjLTQ3MTYtOWRiZi05ZjQyMDhjYzg1Y2IiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiNjE3MTI0Mi1mYzgyLTQxMzAtYjEwNC1jMmY0YzE5NWJlZGYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "Self-hostingruntime",
