@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADF-VB8B-ETL-DEV07"
 		},
+		"ADLS_SQL_ON PREM_accountKey": {
+			"value": ""
+		},
 		"LS_AZSQLDB_METADATA_password": {
 			"value": ""
 		},
@@ -16,6 +19,12 @@
 		},
 		"LS_JSON_AzureDatalakeStorage1_accountKey": {
 			"value": ""
+		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"ADLS_SQL_ON PREM_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsrc07.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "@{linkedService().storage_account_loc}"
@@ -55,6 +64,15 @@
 		},
 		"LS_JSON_AzurelakeStorage001_properties_typeProperties_url": {
 			"value": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "vbproject"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "sandip"
 		}
 	}
 }
