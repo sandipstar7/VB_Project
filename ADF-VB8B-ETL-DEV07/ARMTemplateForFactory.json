@@ -1401,50 +1401,7 @@
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "jobid",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "trigger_id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "L2_switch_type",
-						"type": "varchar"
-					},
-					{
-						"name": "L3_switch_type",
-						"type": "varchar"
-					},
-					{
-						"name": "L4_switch_type",
-						"type": "varchar"
-					},
-					{
-						"name": "created_user",
-						"type": "varchar"
-					},
-					{
-						"name": "created_date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "updated_user",
-						"type": "varchar"
-					},
-					{
-						"name": "updated_date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					}
-				],
+				"schema": [],
 				"typeProperties": {}
 			},
 			"dependsOn": [
