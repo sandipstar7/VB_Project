@@ -49,7 +49,7 @@
 					},
 					"cases": [
 						{
-							"value": "azure",
+							"value": "Azure",
 							"activities": [
 								{
 									"name": "Exec_file_CSV",
