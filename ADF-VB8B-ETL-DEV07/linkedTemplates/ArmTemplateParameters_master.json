@@ -39,7 +39,7 @@
 			"value": "@{linkedService().storage_account_loc}"
 		},
 		"LS_AZADLS_VB_CLOUD_RAW_properties_typeProperties_url": {
-			"value": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
+			"value": "@{linkedService().storage_account_loc}"
 		},
 		"LS_AZSQLDB_METADATA_properties_typeProperties_server": {
 			"value": "sql-db-vb-dev01.database.windows.net"
