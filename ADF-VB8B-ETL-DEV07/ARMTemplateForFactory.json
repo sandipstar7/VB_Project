@@ -662,7 +662,7 @@
 										"type": "Expression"
 									},
 									"filename": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
+										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.SourceFile",
 										"type": "Expression"
 									}
 								}
@@ -679,10 +679,6 @@
 									},
 									"directory": {
 										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory",
-										"type": "Expression"
-									},
-									"filename": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.filename",
 										"type": "Expression"
 									}
 								}
@@ -973,10 +969,6 @@
 									},
 									"directory": {
 										"value": "@concat(\n    activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory, '/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd'), '/'\n)",
-										"type": "Expression"
-									},
-									"filename": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile\n\n",
 										"type": "Expression"
 									}
 								}
@@ -1526,9 +1518,6 @@
 					},
 					"directory": {
 						"type": "string"
-					},
-					"filename": {
-						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -1536,8 +1525,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@dataset().filename",
+						"folderPath": {
+							"value": "@dataset().directory",
 							"type": "Expression"
 						},
 						"fileSystem": "output"
