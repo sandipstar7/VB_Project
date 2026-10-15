@@ -166,7 +166,7 @@
 								"type": "Expression"
 							},
 							"filename": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.sourcefile",
+								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.SourceFile",
 								"type": "Expression"
 							}
 						}
@@ -183,10 +183,6 @@
 							},
 							"directory": {
 								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.targetdirectory",
-								"type": "Expression"
-							},
-							"filename": {
-								"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.filename",
 								"type": "Expression"
 							}
 						}

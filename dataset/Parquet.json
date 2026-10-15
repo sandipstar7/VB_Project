@@ -8,10 +8,6 @@
 				"storage_account_loc": {
 					"value": "@dataset().storage_account_loc",
 					"type": "Expression"
-				},
-				"directory": {
-					"value": "@dataset().directory",
-					"type": "Expression"
 				}
 			}
 		},
@@ -20,9 +16,6 @@
 				"type": "string"
 			},
 			"directory": {
-				"type": "string"
-			},
-			"filename": {
 				"type": "string"
 			}
 		},
