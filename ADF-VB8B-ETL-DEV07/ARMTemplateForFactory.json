@@ -1373,7 +1373,8 @@
 						"fileName": {
 							"value": "@dataset().filename",
 							"type": "Expression"
-						}
+						},
+						"fileSystem": "input"
 					},
 					"columnDelimiter": {
 						"value": "@dataset().col_delimiter",
