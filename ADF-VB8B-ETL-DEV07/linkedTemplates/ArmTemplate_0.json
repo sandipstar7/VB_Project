@@ -27,10 +27,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_JSON_AzureDatalakeStorage1'"
 		},
-		"LS_SQLSERVER_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SQLSERVER'"
-		},
 		"ADLS_SQL_ON PREM_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevvbsrc07.dfs.core.windows.net/"
@@ -86,18 +82,6 @@
 		"LS_JSON_AzurelakeStorage001_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevisionboardraw007.dfs.core.windows.net/"
-		},
-		"LS_SQLSERVER_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "localhost"
-		},
-		"LS_SQLSERVER_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "vbproject"
-		},
-		"LS_SQLSERVER_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "sandip"
 		}
 	},
 	"variables": {
@@ -338,6 +322,24 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/1DS_AZSQLDB_METADATA1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_AZSQLDB_METADATA1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_METADATA1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DS_AZADLS_CSVCOPY_CLOUD_SRC')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -526,34 +528,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ADLS_SQL_ON PREM')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQLSERVER')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"server": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]",
-					"database": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]",
-					"encrypt": "mandatory",
-					"trustServerCertificate": true,
-					"authenticationType": "SQL",
-					"userName": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SQLSERVER_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "Self-hostingruntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/Self-hostingruntime')]"
 			]
 		}
 	]

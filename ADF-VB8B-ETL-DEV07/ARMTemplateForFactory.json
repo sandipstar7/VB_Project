@@ -526,7 +526,7 @@
 								"partitionOption": "None"
 							},
 							"dataset": {
-								"referenceName": "DS_AZSQLDB_METADATA",
+								"referenceName": "1DS_AZSQLDB_METADATA1",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -800,7 +800,7 @@
 				"lastPublishTime": "2026-10-02T05:33:11Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_METADATA')]",
+				"[concat(variables('factoryId'), '/datasets/1DS_AZSQLDB_METADATA1')]",
 				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_METADATA')]",
 				"[concat(variables('factoryId'), '/datasets/DS_AZADLS_CSVCOPY_CLOUD_SRC')]",
 				"[concat(variables('factoryId'), '/datasets/Parquet')]"
@@ -1338,6 +1338,24 @@
 				"annotations": []
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/1DS_AZSQLDB_METADATA1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_AZSQLDB_METADATA1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_METADATA1')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DS_AZADLS_CSVCOPY_CLOUD_SRC')]",

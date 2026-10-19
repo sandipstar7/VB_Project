@@ -141,9 +141,6 @@
 					"LS_JSON_AzureDatalakeStorage1_accountKey": {
 						"value": "[parameters('LS_JSON_AzureDatalakeStorage1_accountKey')]"
 					},
-					"LS_SQLSERVER_password": {
-						"value": "[parameters('LS_SQLSERVER_password')]"
-					},
 					"ADLS_SQL_ON PREM_properties_typeProperties_url": {
 						"value": "[parameters('ADLS_SQL_ON PREM_properties_typeProperties_url')]"
 					},
@@ -185,15 +182,6 @@
 					},
 					"LS_JSON_AzurelakeStorage001_properties_typeProperties_url": {
 						"value": "[parameters('LS_JSON_AzurelakeStorage001_properties_typeProperties_url')]"
-					},
-					"LS_SQLSERVER_properties_typeProperties_server": {
-						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
-					},
-					"LS_SQLSERVER_properties_typeProperties_database": {
-						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]"
-					},
-					"LS_SQLSERVER_properties_typeProperties_userName": {
-						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -212,6 +200,18 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQLSERVER_password": {
+						"value": "[parameters('LS_SQLSERVER_password')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]"
 					}
 				}
 			},
