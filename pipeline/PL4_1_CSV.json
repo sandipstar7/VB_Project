@@ -31,7 +31,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "DS_AZSQLDB_METADATA",
+						"referenceName": "1DS_AZSQLDB_METADATA1",
 						"type": "DatasetReference"
 					}
 				}
