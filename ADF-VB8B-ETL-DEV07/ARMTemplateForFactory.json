@@ -1507,7 +1507,7 @@
 						},
 						"fileSystem": "output"
 					},
-					"compressionCodec": null
+					"compressionCodec": "snappy"
 				},
 				"schema": []
 			},
