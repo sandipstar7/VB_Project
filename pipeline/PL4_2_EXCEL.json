@@ -233,7 +233,10 @@
 					"storedProcedureName": "[dbo].[vb_end_log_entry]",
 					"storedProcedureParameters": {
 						"error": {
-							"value": null,
+							"value": {
+								"value": "@activity('COPY-EXCEL').error.message",
+								"type": "Expression"
+							},
 							"type": "String"
 						},
 						"jobid": {
@@ -244,7 +247,10 @@
 							"type": "Int32"
 						},
 						"pipeline_id": {
-							"value": "",
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
 							"type": "String"
 						}
 					}
