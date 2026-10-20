@@ -1,0 +1,39 @@
+{
+	"name": "DS_AZADLS_EXCELCOPY_SRC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_AZADLS_EXCEL_COPY_SRC",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"storage_account_loc ": {
+					"value": "@dataset().storage_account_loc",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"storage_account_loc": {
+				"type": "string"
+			},
+			"sheetname": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"fileSystem": "input"
+			}
+		},
+		"schema": []
+	}
+}
