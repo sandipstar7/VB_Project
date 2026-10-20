@@ -101,7 +101,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderStoredProcedureName": "[dbo].[vb_end_log_entry]",
+						"sqlReaderStoredProcedureName": "[dbo].[vb_get_job_dtls]",
 						"storedProcedureParameters": {
 							"jobid": {
 								"type": "Int32",
@@ -142,7 +142,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_AZSQLDB_METADATA",
+						"referenceName": "1DS_AZSQLDB_METADATA1",
 						"type": "DatasetReference"
 					}
 				],
