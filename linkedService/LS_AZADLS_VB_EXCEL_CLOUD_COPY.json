@@ -1,0 +1,21 @@
+{
+	"name": "LS_AZADLS_VB_EXCEL_CLOUD_COPY",
+	"properties": {
+		"parameters": {
+			"storage_account_loc": {
+				"type": "string"
+			},
+			"sheetname": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "@{linkedService().storage_account_loc}"
+		}
+	}
+}
